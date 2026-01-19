@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Construction-inspired palette: Steel, Amber, Concrete */
+    --background: 210 15% 97%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Primary: Deep Steel Blue */
+    --primary: 215 35% 25%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary: Warm Amber/Copper */
+    --secondary: 32 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted: Concrete Gray */
+    --muted: 210 10% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent: Steel highlight */
+    --accent: 215 25% 88%;
+    --accent-foreground: 215 35% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 32 80% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom Construction Colors */
+    --steel: 215 35% 25%;
+    --steel-light: 215 25% 40%;
+    --amber: 32 80% 50%;
+    --amber-light: 35 85% 60%;
+    --amber-dark: 28 75% 40%;
+    --concrete: 210 8% 70%;
+    --concrete-light: 210 10% 85%;
+    --concrete-dark: 210 12% 50%;
+
+    /* Gradients */
+    --gradient-steel: linear-gradient(135deg, hsl(215 35% 25%), hsl(215 30% 35%));
+    --gradient-amber: linear-gradient(135deg, hsl(32 80% 50%), hsl(38 85% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 35% 18% / 0.95), hsl(215 30% 25% / 0.85));
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(215 35% 25% / 0.08);
+    --shadow-md: 0 8px 24px hsl(215 35% 25% / 0.12);
+    --shadow-lg: 0 16px 48px hsl(215 35% 25% / 0.16);
+    --shadow-amber: 0 8px 32px hsl(32 80% 50% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 14%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 14%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 32 80% 55%;
+    --primary-foreground: 220 20% 10%;
+
+    --secondary: 215 30% 30%;
+    --secondary-foreground: 210 20% 95%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 32 80% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .text-gradient-amber {
+    background: linear-gradient(135deg, hsl(32 80% 50%), hsl(38 85% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-steel {
+    background: linear-gradient(135deg, hsl(215 25% 45%), hsl(215 30% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-steel {
+    background-color: hsl(var(--steel));
+  }
+
+  .bg-amber {
+    background-color: hsl(var(--amber));
+  }
+
+  .bg-concrete {
+    background-color: hsl(var(--concrete));
+  }
+
+  .bg-gradient-steel {
+    background: var(--gradient-steel);
+  }
+
+  .bg-gradient-amber {
+    background: var(--gradient-amber);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .shadow-construction {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-amber-glow {
+    box-shadow: var(--shadow-amber);
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--concrete-dark));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--steel-light));
+}
