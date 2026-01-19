@@ -46,7 +46,7 @@ const projects = [
   {
     id: 1,
     name: "Axiom Gas",
-    location: "To be Announced",
+    location: "Plot no: C-541, Pavne MIDC",
     type: "Data Centre",
     area: "9,146 Sqft",
     architect: "",

@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+// import anil from "@/assets/team/anil-pawar.jpeg";
+// import pratik from "@/assets/team/pratik-pawar.jpg";
+import simab from "@/assets/team/simab-borkar.jpeg";
+import vishal from "@/assets/team/vishal-patil.jpeg";
 
 const technicalStaff = [
   { position: "Project Co-ordinator", count: 4, qualification: "B.E. Civil", experience: "18-23 Years Industrial" },
@@ -20,8 +24,8 @@ const leadership = [
   { name: "Anil Shrimant Pawar", role: "Founder", initial: "ASP" },
   { name: "Pratik Pawar", role: "Director", initial: "PP" },
 
-  { name: "Simab Borkar", role: "Chief Operating Officer", initial: "SB" },
-  { name: "Vishal Patil", role: "Senior Engineer", initial: "VP" },
+  { name: "Simab Borkar", role: "Chief Operating Officer", initial: "SB",image : simab },
+  { name: "Vishal Patil", role: "Senior Engineer", initial: "VP",image : vishal },
 ];
 
 export const Team = () => {
@@ -65,13 +69,25 @@ export const Team = () => {
               className="group text-center"
             >
               <div className="relative mb-6">
-                <div className="w-32 h-32 mx-auto bg-gradient-steel rounded-full flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <span className="font-display text-3xl font-bold text-primary-foreground">
-                    {member.initial}
-                  </span>
+                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-construction border-4 border-background group-hover:scale-105 transition-transform duration-300 bg-muted flex items-center justify-center">
+
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="font-display text-3xl font-bold text-primary-foreground">
+                      {member.initial}
+                    </span>
+                  )}
                 </div>
+
+                {/* Accent Line */}
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-secondary rounded-full" />
               </div>
+
               <h3 className="font-display text-lg font-bold text-foreground mb-1">
                 {member.name}
               </h3>
@@ -123,9 +139,8 @@ export const Team = () => {
                 {technicalStaff.map((staff, index) => (
                   <tr
                     key={index}
-                    className={`border-b border-border ${
-                      index % 2 === 0 ? "bg-card" : "bg-muted/50"
-                    }`}
+                    className={`border-b border-border ${index % 2 === 0 ? "bg-card" : "bg-muted/50"
+                      }`}
                   >
                     <td className="px-6 py-4 font-medium text-foreground">
                       {staff.position}
@@ -175,9 +190,8 @@ export const Team = () => {
                 {administrativeStaff.map((staff, index) => (
                   <tr
                     key={index}
-                    className={`border-b border-border ${
-                      index % 2 === 0 ? "bg-card" : "bg-muted/50"
-                    }`}
+                    className={`border-b border-border ${index % 2 === 0 ? "bg-card" : "bg-muted/50"
+                      }`}
                   >
                     <td className="px-6 py-4 font-medium text-foreground">
                       {staff.position}
