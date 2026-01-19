@@ -31,6 +31,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, MapPin, Building2, Ruler } from "lucide-react";
 
 // Import project images
+import axiomgas from "@/assets/projects/axiomgas.jpeg";
 import envirochem from "@/assets/projects/envirochem.jpg";
 import adityaEngineering from "@/assets/projects/aditya-engineering.jpg";
 import shavoNorgren from "@/assets/projects/shavo-norgren.jpg";
@@ -44,12 +45,13 @@ import rbSukhramani from "@/assets/projects/rb-sukhramani.jpg";
 const projects = [
   {
     id: 1,
-    name: "Envirochem Tech Solutions",
+    name: "Axiom Gas",
     location: "R-854, Rabale MIDC",
     type: "Data Centre",
-    area: "2,00,000 Sqft",
-    architect: "Amol Velankar",
-    image: envirochem,
+    area: "9,146 Sqft",
+    architect: "",
+    consultant : "Monika suryavanshi",
+    image: axiomgas,
     status: "Ongoing",
   },
   {
@@ -59,6 +61,7 @@ const projects = [
     type: "Data Centre",
     area: "2,00,000 Sqft",
     architect: "Amol Velankar",
+    consultant : "Chopdekar",
     image: envirochem,
     status: "Ongoing",
   },
@@ -368,6 +371,10 @@ export const ProjectGallery = () => {
                   <div className="mt-8 pt-6 border-t border-border">
                     <p className="text-sm text-muted-foreground mb-1">Architect</p>
                     <p className="font-medium text-foreground">{selectedProject.architect}</p>
+                  </div>
+                   <div className="mt-8 pt-6 border-t border-border">
+                    <p className="text-sm text-muted-foreground mb-1">Consultant</p>
+                    <p className="font-medium text-foreground">{selectedProject.consultant}</p>
                   </div>
                 </div>
               </div>
