@@ -2,24 +2,24 @@ import { motion } from "framer-motion";
 
 const technicalStaff = [
   { position: "Project Co-ordinator", count: 4, qualification: "B.E. Civil", experience: "18-23 Years Industrial" },
-  { position: "Project Manager", count: 13, qualification: "B.E. Civil / DCE Civil", experience: "12-15 Years Industrial" },
-  { position: "Sr. Site Engineer", count: 18, qualification: "B.E. Civil / DCE", experience: "10-12 Years Industrial" },
-  { position: "Assistant Engineer", count: 30, qualification: "B.E. Civil / DCE", experience: "08-10 Years Industrial" },
-  { position: "Site Supervisor", count: 28, qualification: "Graduate", experience: "15-20 Years Industrial" },
-  { position: "QA / QC Engineer", count: 8, qualification: "B.E. Civil / DCE", experience: "12-15 Years Industrial" },
-  { position: "Safety Manager / Officer", count: 10, qualification: "Safety Course / Safety Graduate", experience: "10-15 Years Industrial" },
+  { position: "Project Manager", count: 3, qualification: "B.E. Civil / DCE Civil", experience: "12-15 Years Industrial" },
+  { position: "Sr. Site Engineer", count: 4, qualification: "B.E. Civil / DCE", experience: "10-12 Years Industrial" },
+  { position: "Assistant Engineer", count: 4, qualification: "B.E. Civil / DCE", experience: "08-10 Years Industrial" },
+  { position: "Site Supervisor", count: 4, qualification: "Graduate", experience: "15-20 Years Industrial" },
+  { position: "QA / QC Engineer", count: 3, qualification: "B.E. Civil / DCE", experience: "12-15 Years Industrial" },
+  { position: "Safety Manager / Officer", count: 4, qualification: "Safety Course / Safety Graduate", experience: "10-15 Years Industrial" },
   { position: "BIM Engineer", count: 1, qualification: "B.E. Civil / B.Arch", experience: "5-8 Years Industrial" },
 ];
 
 const administrativeStaff = [
-  { position: "Accountants", count: 6, qualification: "C.A. / B.Com", experience: "12-15 Years Industrial" },
+  { position: "Accountants", count: 2, qualification: "C.A. / B.Com", experience: "12-15 Years Industrial" },
   { position: "Purchase / Store", count: 10, qualification: "Technical / Any Graduation", experience: "12-15 Years Industrial" },
 ];
 
 const leadership = [
   { name: "Anil Shrimant Pawar", role: "Founder", initial: "ASP" },
   { name: "Pratik Pawar", role: "Director", initial: "PP" },
-  { name: "Kaustubh Pawar", role: "Co-Founder", initial: "KP" },
+
   { name: "Simab Borkar", role: "Chief Operating Officer", initial: "SB" },
   { name: "Vishal Patil", role: "Senior Engineer", initial: "VP" },
 ];
