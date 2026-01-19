@@ -61,13 +61,17 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
+            <a href="#projects">
             <Button variant="secondary" size="lg" className="gap-2 shadow-amber-glow">
               View Our Projects
               <ArrowRight className="w-5 h-5" />
             </Button>
+            </a>
+            <a href="#contact">
             <Button variant="hero" size="lg">
               Get a Quote
             </Button>
+            </a>
           </motion.div>
         </div>
 

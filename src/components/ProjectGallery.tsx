@@ -54,6 +54,16 @@ const projects = [
   },
   {
     id: 2,
+    name: "Envirochem Tech Solutions",
+    location: "R-854, Rabale MIDC",
+    type: "Data Centre",
+    area: "2,00,000 Sqft",
+    architect: "Amol Velankar",
+    image: envirochem,
+    status: "Ongoing",
+  },
+  {
+    id: 3,
     name: "Aditya Engineering",
     location: "R-362, Rabale",
     type: "Factory Building",
@@ -63,7 +73,7 @@ const projects = [
     status: "Ongoing",
   },
   {
-    id: 3,
+    id: 4,
     name: "Shavo Norgren",
     location: "R-524/525, Rabale MIDC",
     type: "Factory RCC",
@@ -73,7 +83,7 @@ const projects = [
     status: "Completed",
   },
   {
-    id: 4,
+    id: 5,
     name: "Well Finish",
     location: "R-975, Rabale",
     type: "Factory Building",
@@ -83,7 +93,7 @@ const projects = [
     status: "Completed",
   },
   {
-    id: 5,
+    id: 6,
     name: "Parth Enterprises",
     location: "R-916 Rabale MIDC",
     type: "Factory Building",
@@ -93,7 +103,7 @@ const projects = [
     status: "Completed",
   },
   {
-    id: 6,
+    id: 7,
     name: "Vista Inn",
     location: "Rabale MIDC",
     type: "Hotel",
@@ -103,7 +113,7 @@ const projects = [
     status: "Completed",
   },
   {
-    id: 7,
+    id: 8,
     name: "Hilda Automation",
     location: "R-810/01, Rabale",
     type: "Wall Construction",
@@ -113,7 +123,7 @@ const projects = [
     status: "Completed",
   },
   {
-    id: 8,
+    id: 9,
     name: "Vikas Patil Hotel",
     location: "K-27, Airoli",
     type: "Hotel",
@@ -123,7 +133,7 @@ const projects = [
     status: "Completed",
   },
   {
-    id: 9,
+    id: 10,
     name: "R.B. Sukhramani",
     location: "R-812, Rabale",
     type: "Factory Building",
