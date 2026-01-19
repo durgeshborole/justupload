@@ -46,7 +46,7 @@ const projects = [
   {
     id: 1,
     name: "Axiom Gas",
-    location: "R-854, Rabale MIDC",
+    location: "To be Announced",
     type: "Data Centre",
     area: "9,146 Sqft",
     architect: "",

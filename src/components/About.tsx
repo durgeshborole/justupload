@@ -52,10 +52,13 @@ export const About = () => {
               <span className="text-gradient-amber">Quality Construction</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Pawar Constructions is a trusted name in civil construction and engineering,
-              committed to delivering high-quality infrastructure and turnkey project
-              solutions. With years of experience and a team of skilled professionals, we
-              specialize in residential, commercial, and industrial construction projects.
+              Pawar Constructions is a professionally governed civil engineering and construction organization, established in 1999, delivering high-performance infrastructure solutions with precision, reliability, and long-term value. With over two decades of industry experience, our operations are built on a strong foundation of engineering discipline, quality control, and systematic project execution.
+
+              We specialize in transforming technically complex designs into structurally sound, durable, and future-ready developments. Through rigorous planning, modern construction methodologies, and strict adherence to safety protocols, we ensure consistency and excellence across every stage of project delivery.
+
+              Our commitment to quality is reinforced by ISO 9001 certification and International Accreditation Forum (IAF) accreditation, reflecting compliance with globally recognized quality management systems. These standards guide our processes, strengthen accountability, and ensure measurable performance outcomes across all projects.
+
+              Driven by integrity, technical competence, and professional governance, Pawar Constructions partners with clients to deliver infrastructure that meets the highest expectations of performance, safety, and durability—today and for generations to come.
             </p>
 
             <ul className="space-y-4 mb-10">
