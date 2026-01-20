@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import heroBuilding from "@/assets/hero-building.jpg";
 
 const stats = [
-  { icon: Building2, value: "200+", label: "Projects Completed" },
-  { icon: Users, value: "250+", label: "Happy Clients" },
-  { icon: Award, value: "350+", label: "Awards Won" },
+  { icon: Building2, value: "150+", label: "Projects Completed" },
+  { icon: Users, value: "250+", label: "Trusted Clients" },
+  { icon: Award, value: "500+", label: "Employees" },
 ];
 
 export const Hero = () => {
