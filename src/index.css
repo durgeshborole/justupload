@@ -224,3 +224,28 @@ html {
     color: inherit;
   }
 }
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #d9dee8;
+  background: #f9fafc;
+  font-size: 15px;
+}
+
+.input::placeholder {
+  color: #8b95a7;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #e18a00;
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(225, 138, 0, 0.15);
+}

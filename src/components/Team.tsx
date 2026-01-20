@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 // import pratik from "@/assets/team/pratik-pawar.jpg";
 import simab from "@/assets/team/simab-borkar.jpeg";
 import vishal from "@/assets/team/vishal-patil.jpeg";
+import anil from "@/assets/team/pawar.jpeg";
+import pratik from "@/assets/team/pratik.jpeg";
 
 const technicalStaff = [
   { position: "Project Co-ordinator", count: 4, qualification: "B.E. Civil", experience: "18-23 Years Industrial" },
@@ -21,8 +23,8 @@ const administrativeStaff = [
 ];
 
 const leadership = [
-  { name: "Anil Shrimant Pawar", role: "Founder", initial: "ASP" },
-  { name: "Pratik Pawar", role: "Director", initial: "PP" },
+  { name: "Anil Shrimant Pawar", role: "Founder", initial: "ASP",image : anil },
+  { name: "Pratik Pawar", role: "Director", initial: "PP",image : pratik },
 
   { name: "Simab Borkar", role: "Chief Operating Officer", initial: "SB",image : simab },
   { name: "Vishal Patil", role: "Senior Engineer", initial: "VP",image : vishal },
