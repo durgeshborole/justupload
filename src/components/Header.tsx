@@ -139,18 +139,25 @@ export const Header = () => {
                   href={link.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    const id = link.href.replace("#", "");
-                    const el = document.getElementById(id);
-                    if (el) {
-                      el.scrollIntoView({ behavior: "smooth" });
-                    }
+
+                    // 1. Close menu first
                     setIsMobileMenuOpen(false);
+
+                    // 2. Scroll AFTER menu closes
+                    setTimeout(() => {
+                      const id = link.href.replace("#", "");
+                      const el = document.getElementById(id);
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }, 300); // matches framer-motion animation
                   }}
                   className="font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
                 </a>
               ))}
+
               <Button variant="secondary" className="w-full gap-2 mt-2">
                 <Phone className="w-4 h-4" />
                 +91 9137222320
