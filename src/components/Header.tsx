@@ -155,18 +155,27 @@ export const Header = () => {
                   onClick={(e) => {
                     e.preventDefault();
 
-                    // 1. Close the menu
+                    // 1. Close menu
                     setIsMobileMenuOpen(false);
 
-                    // 2. Change hash AFTER menu closes
+                    // 2. Force hash reset, then set again
                     setTimeout(() => {
-                      window.location.hash = link.href;
-                    }, 350);
+                      const hash = link.href;
+
+                      if (window.location.hash === hash) {
+                        window.location.hash = "";
+                      }
+
+                      setTimeout(() => {
+                        window.location.hash = hash;
+                      }, 10);
+                    }, 300);
                   }}
                   className="font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
                 </a>
+
 
 
               ))}
