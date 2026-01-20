@@ -217,3 +217,10 @@ html {
 html {
   scroll-behavior: smooth;
 }
+
+/* Prevent mobile double-tap / hover blocking */
+@media (hover: none) {
+  a:hover {
+    color: inherit;
+  }
+}

@@ -145,36 +145,31 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card border-t border-border"
+            className="lg:hidden bg-card border-t border-border pointer-events-auto"
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-
-                    // 1. Close menu
+                  type="button"
+                  onClick={() => {
                     setIsMobileMenuOpen(false);
 
-                    // 2. Force hash reset, then set again
                     setTimeout(() => {
                       const hash = link.href;
-
                       if (window.location.hash === hash) {
                         window.location.hash = "";
                       }
-
                       setTimeout(() => {
                         window.location.hash = hash;
                       }, 10);
                     }, 300);
                   }}
-                  className="font-medium text-foreground hover:text-secondary py-2"
+                  className="text-left font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
-                </a>
+                </button>
+
 
 
 
