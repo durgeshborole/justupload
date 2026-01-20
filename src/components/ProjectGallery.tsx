@@ -50,7 +50,7 @@ const projects = [
     type: "Data Centre",
     area: "9,146 Sqft",
     architect: "",
-    consultant : "Monika suryavanshi",
+    consultant: "Monika suryavanshi",
     image: axiomgas,
     status: "Ongoing",
   },
@@ -61,7 +61,7 @@ const projects = [
     type: "Data Centre",
     area: "2,00,000 Sqft",
     architect: "Amol Velankar",
-    consultant : "Chopdekar",
+    consultant: "Chopdekar",
     image: envirochem,
     status: "Ongoing",
   },
@@ -151,8 +151,8 @@ export const ProjectGallery = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [filter, setFilter] = useState<string>("all");
 
-  const filteredProjects = filter === "all" 
-    ? projects 
+  const filteredProjects = filter === "all"
+    ? projects
     : projects.filter(p => p.status.toLowerCase() === filter);
 
   const openLightbox = (project: typeof projects[0]) => {
@@ -168,7 +168,7 @@ export const ProjectGallery = () => {
   const navigateProject = (direction: "prev" | "next") => {
     if (!selectedProject) return;
     const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject.id);
-    const newIndex = direction === "prev" 
+    const newIndex = direction === "prev"
       ? (currentIndex - 1 + filteredProjects.length) % filteredProjects.length
       : (currentIndex + 1) % filteredProjects.length;
     setSelectedProject(filteredProjects[newIndex]);
@@ -205,11 +205,10 @@ export const ProjectGallery = () => {
             <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                filter === status
+              className={`px-6 py-2 rounded-full font-medium transition-all ${filter === status
                   ? "bg-secondary text-secondary-foreground shadow-amber-glow"
                   : "bg-muted text-muted-foreground hover:bg-accent"
-              }`}
+                }`}
             >
               {status.charAt(0).toUpperCase() + status.slice(1)}
             </button>
@@ -240,13 +239,12 @@ export const ProjectGallery = () => {
                     className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                  
+
                   {/* Status Badge */}
-                  <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${
-                    project.status === "Ongoing" 
-                      ? "bg-secondary text-secondary-foreground" 
+                  <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${project.status === "Ongoing"
+                      ? "bg-secondary text-secondary-foreground"
                       : "bg-card text-foreground"
-                  }`}>
+                    }`}>
                     {project.status}
                   </span>
 
@@ -321,11 +319,10 @@ export const ProjectGallery = () => {
                     alt={selectedProject.name}
                     className="w-full h-full object-cover"
                   />
-                  <span className={`absolute top-4 left-4 px-4 py-2 rounded-full text-sm font-semibold ${
-                    selectedProject.status === "Ongoing" 
-                      ? "bg-secondary text-secondary-foreground" 
+                  <span className={`absolute top-4 left-4 px-4 py-2 rounded-full text-sm font-semibold ${selectedProject.status === "Ongoing"
+                      ? "bg-secondary text-secondary-foreground"
                       : "bg-card text-foreground"
-                  }`}>
+                    }`}>
                     {selectedProject.status}
                   </span>
                 </div>
@@ -367,15 +364,25 @@ export const ProjectGallery = () => {
                       </div>
                     </div>
                   </div>
+                  {selectedProject.architect && (
+                    <div className="mt-8 pt-6 border-t border-border">
+                      <p className="text-sm text-muted-foreground mb-1">Architect</p>
+                      <p className="font-medium text-foreground">
+                        {selectedProject.architect}
+                      </p>
+                    </div>
+                  )}
 
-                  <div className="mt-8 pt-6 border-t border-border">
-                    <p className="text-sm text-muted-foreground mb-1">Architect</p>
-                    <p className="font-medium text-foreground">{selectedProject.architect}</p>
-                  </div>
-                   <div className="mt-8 pt-6 border-t border-border">
-                    <p className="text-sm text-muted-foreground mb-1">Consultant</p>
-                    <p className="font-medium text-foreground">{selectedProject.consultant}</p>
-                  </div>
+                  {selectedProject.consultant && (
+                    <div className="mt-8 pt-6 border-t border-border">
+                      <p className="text-sm text-muted-foreground mb-1">Consultant</p>
+                      <p className="font-medium text-foreground">
+                        {selectedProject.consultant}
+                      </p>
+                    </div>
+                  )}
+
+
                 </div>
               </div>
             </motion.div>
