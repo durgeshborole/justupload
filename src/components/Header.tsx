@@ -25,6 +25,19 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
@@ -57,6 +70,8 @@ export const Header = () => {
             </p>
           </div>
         </a>
+
+
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
@@ -140,22 +155,23 @@ export const Header = () => {
                   onClick={(e) => {
                     e.preventDefault();
 
-                    // 1. Close menu first
+                    // Close menu
                     setIsMobileMenuOpen(false);
 
-                    // 2. Scroll AFTER menu closes
+                    // Force scroll AFTER body unlock
                     setTimeout(() => {
                       const id = link.href.replace("#", "");
                       const el = document.getElementById(id);
                       if (el) {
                         el.scrollIntoView({ behavior: "smooth" });
                       }
-                    }, 300); // matches framer-motion animation
+                    }, 350);
                   }}
                   className="font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
                 </a>
+
               ))}
 
               <Button variant="secondary" className="w-full gap-2 mt-2">

@@ -204,3 +204,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--steel-light));
 }
+
+html {
+  scroll-behavior: smooth;
+}
