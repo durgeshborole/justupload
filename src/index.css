@@ -55,7 +55,7 @@
     --gradient-steel: linear-gradient(135deg, hsl(215 35% 25%), hsl(215 30% 35%));
     --gradient-amber: linear-gradient(135deg, hsl(32 80% 50%), hsl(38 85% 55%));
     --gradient-hero: linear-gradient(135deg, hsl(215 35% 18% / 0.95), hsl(215 30% 25% / 0.85));
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px hsl(215 35% 25% / 0.08);
     --shadow-md: 0 8px 24px hsl(215 35% 25% / 0.12);
@@ -121,7 +121,12 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 }
