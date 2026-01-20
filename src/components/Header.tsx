@@ -155,22 +155,19 @@ export const Header = () => {
                   onClick={(e) => {
                     e.preventDefault();
 
-                    // Close menu
+                    // 1. Close the menu
                     setIsMobileMenuOpen(false);
 
-                    // Force scroll AFTER body unlock
+                    // 2. Change hash AFTER menu closes
                     setTimeout(() => {
-                      const id = link.href.replace("#", "");
-                      const el = document.getElementById(id);
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
-                      }
+                      window.location.hash = link.href;
                     }, 350);
                   }}
                   className="font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
                 </a>
+
 
               ))}
 
