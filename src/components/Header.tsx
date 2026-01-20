@@ -37,6 +37,20 @@ export const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    const headerOffset = 120; // your fixed header height
+    if (!element) return;
+
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
 
   return (
     <header
@@ -153,26 +167,20 @@ export const Header = () => {
                   key={link.href}
                   type="button"
                   onClick={() => {
+                    const id = link.href.replace("#", "");
+
+                    // 1. Close menu
                     setIsMobileMenuOpen(false);
 
+                    // 2. Scroll AFTER menu closes
                     setTimeout(() => {
-                      const hash = link.href;
-                      if (window.location.hash === hash) {
-                        window.location.hash = "";
-                      }
-                      setTimeout(() => {
-                        window.location.hash = hash;
-                      }, 10);
-                    }, 300);
+                      scrollToSection(id);
+                    }, 350);
                   }}
                   className="text-left font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
                 </button>
-
-
-
-
               ))}
 
               <Button variant="secondary" className="w-full gap-2 mt-2">
@@ -180,6 +188,7 @@ export const Header = () => {
                 +91 9137222320
               </Button>
             </nav>
+
 
           </motion.div>
         )}
