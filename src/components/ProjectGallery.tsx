@@ -175,7 +175,7 @@ export const ProjectGallery = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-background">
+    <section id="projects" className="py-28 scroll-mt-28">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

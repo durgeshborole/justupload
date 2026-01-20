@@ -30,7 +30,7 @@ const leadership = [
 
 export const Team = () => {
   return (
-    <section id="team" className="py-24 bg-muted">
+    <section id="team" className="py-28 scroll-mt-28">
       <div className="container mx-auto px-4">
         {/* Leadership Section */}
         <motion.div

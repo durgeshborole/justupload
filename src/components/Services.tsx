@@ -84,7 +84,7 @@ const itemVariants = {
 
 export const Services = () => {
   return (
-    <section id="services" className="py-24 bg-muted">
+    <section id="services" className="py-28 scroll-mt-28">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

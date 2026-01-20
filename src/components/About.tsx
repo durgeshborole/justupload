@@ -11,7 +11,10 @@ const values = [
 
 export const About = () => {
   return (
-    <section id="about" className="py-28 bg-background">
+    <section
+      id="about"
+      className="py-28 bg-background scroll-mt-28"
+    >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           
@@ -59,10 +62,12 @@ export const About = () => {
 
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-8 leading-tight">
               Building Enduring Infrastructure Through{" "}
-              <span className="text-gradient-amber">Engineering Excellence</span>
+              <span className="text-gradient-amber">
+                Engineering Excellence
+              </span>
             </h2>
 
-            {/* Split Content for Better Readability */}
+            {/* Description */}
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-10">
               <p>
                 Pawar Constructions is a professionally governed civil engineering and
@@ -131,6 +136,7 @@ export const About = () => {
                 </p>
               </div>
             </div>
+
           </motion.div>
         </div>
       </div>
