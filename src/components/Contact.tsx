@@ -1,26 +1,28 @@
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useRef } from "react";
 
 export const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
+
     setLoading(true);
 
     try {
       await emailjs.sendForm(
         "service_47mtjtn",
         "template_lbf9wsj",
-        e.currentTarget,
+        formRef.current,
         "y9yeF4h5ICScgCss8"
       );
 
       alert("Message sent successfully!");
-      e.currentTarget.reset();
+      formRef.current.reset(); // ✅ SAFE reset
     } catch (error) {
       console.error(error);
       alert("Failed to send message. Please try again.");
@@ -32,7 +34,8 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-28 bg-background">
       <div className="container mx-auto px-4">
-        {/* Heading */}
+
+        {/* Header */}
         <div className="text-center mb-16">
           <span className="text-secondary font-semibold uppercase tracking-widest text-sm">
             Get In Touch
@@ -46,7 +49,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        {/* Form Card */}
+        {/* Form */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,58 +60,38 @@ export const Contact = () => {
             Send Us a Message
           </h3>
 
-          <form onSubmit={handleSubmit} className="mt-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
-              {/* Name */}
-              <input
-                name="name"
-                required
-                placeholder="Your Name"
-                className="input"
-              />
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6"
+          >
+            <input name="name" required placeholder="Your Name" className="input" />
+            <input name="email" type="email" required placeholder="Email Address" className="input" />
 
-              {/* Email */}
-              <input
-                name="email"
-                type="email"
-                required
-                placeholder="Email Address"
-                className="input"
-              />
+            <input
+              name="phone"
+              required
+              placeholder="Phone Number"
+              className="input md:col-span-2"
+            />
 
-              {/* Phone (FULL WIDTH) */}
-              <input
-                name="phone"
-                required
-                placeholder="Phone Number"
-                className="input md:col-span-2"
-              />
+            <textarea
+              name="message"
+              required
+              rows={6}
+              placeholder="Tell us about your project..."
+              className="input md:col-span-2 resize-none"
+            />
 
-              {/* Message (FULL WIDTH) */}
-              <textarea
-                name="message"
-                required
-                placeholder="Tell us about your project..."
-                rows={6}
-                className="input md:col-span-2 resize-none"
-              />
-
-              {/* Button (FULL WIDTH) */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="md:col-span-2 mt-4 flex items-center justify-center gap-2 rounded-xl bg-[#e18a00] py-4 text-white font-semibold hover:bg-[#c97800] transition"
-              >
-                <Send className="w-5 h-5" />
-                {loading ? "Sending..." : "Send Message"}
-              </button>
-            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="md:col-span-2 mt-4 flex items-center justify-center gap-2 rounded-xl bg-[#e18a00] py-4 text-white font-semibold hover:bg-[#c97800] transition"
+            >
+              <Send className="w-5 h-5" />
+              {loading ? "Sending..." : "Send Message"}
+            </button>
           </form>
-
-
-
-
-
         </motion.div>
       </div>
     </section>
