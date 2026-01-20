@@ -153,46 +153,43 @@ export const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card border-t border-border pointer-events-auto"
-          >
-            <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  type="button"
-                  onClick={() => {
-                    const id = link.href.replace("#", "");
+      {isMobileMenuOpen && (
+  <div className="lg:hidden bg-card border-t border-border">
+    <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <button
+          key={link.href}
+          type="button"
+          onClick={() => {
+            setIsMobileMenuOpen(false);
 
-                    // 1. Close menu
-                    setIsMobileMenuOpen(false);
+            setTimeout(() => {
+              const el = document.getElementById(
+                link.href.replace("#", "")
+              );
+              if (el) {
+                const y =
+                  el.getBoundingClientRect().top +
+                  window.pageYOffset -
+                  120;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              }
+            }, 0);
+          }}
+          className="text-left font-medium text-foreground py-2"
+        >
+          {link.label}
+        </button>
+      ))}
 
-                    // 2. Scroll AFTER menu closes
-                    setTimeout(() => {
-                      scrollToSection(id);
-                    }, 350);
-                  }}
-                  className="text-left font-medium text-foreground hover:text-secondary py-2"
-                >
-                  {link.label}
-                </button>
-              ))}
+      <Button variant="secondary" className="w-full gap-2 mt-2">
+        <Phone className="w-4 h-4" />
+        +91 9137222320
+      </Button>
+    </nav>
+  </div>
+)}
 
-              <Button variant="secondary" className="w-full gap-2 mt-2">
-                <Phone className="w-4 h-4" />
-                +91 9137222320
-              </Button>
-            </nav>
-
-
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 };
