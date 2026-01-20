@@ -28,8 +28,8 @@ export const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-construction py-3"
-          : "bg-transparent py-5"
+        ? "bg-card/95 backdrop-blur-md shadow-construction py-3"
+        : "bg-transparent py-5"
         }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -49,8 +49,8 @@ export const Header = () => {
             </h1>
             <p
               className={`text-xs transition-colors ${isScrolled
-                  ? "text-muted-foreground"
-                  : "text-primary-foreground/70"
+                ? "text-muted-foreground"
+                : "text-primary-foreground/70"
                 }`}
             >
               Engineers & Contractors
@@ -137,7 +137,15 @@ export const Header = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const id = link.href.replace("#", "");
+                    const el = document.getElementById(id);
+                    if (el) {
+                      el.scrollIntoView({ behavior: "smooth" });
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="font-medium text-foreground hover:text-secondary py-2"
                 >
                   {link.label}
@@ -148,6 +156,7 @@ export const Header = () => {
                 +91 9137222320
               </Button>
             </nav>
+
           </motion.div>
         )}
       </AnimatePresence>
