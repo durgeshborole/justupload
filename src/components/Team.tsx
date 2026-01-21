@@ -5,6 +5,7 @@ import simab from "@/assets/team/simab-borkar.jpeg";
 import vishal from "@/assets/team/vishal-patil.jpeg";
 import anil from "@/assets/team/pawar.jpeg";
 import pratik from "@/assets/team/pratik.jpeg";
+import sagar from "@/assets/team/sagar.jpeg";
 
 const technicalStaff = [
   { position: "Project Co-ordinator", count: 4, qualification: "B.E. Civil", experience: "18-23 Years Industrial" },
@@ -28,6 +29,7 @@ const leadership = [
 
   { name: "Simab Borkar", role: "Chief Operating Officer", initial: "SB",image : simab },
   { name: "Vishal Patil", role: "Senior Engineer", initial: "VP",image : vishal },
+   { name: "Sagar Pawar", role: "Senior Engineer", initial: "SP",image : sagar }
 ];
 
 export const Team = () => {

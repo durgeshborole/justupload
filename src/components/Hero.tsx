@@ -5,7 +5,7 @@ import heroBuilding from "@/assets/hero-building.jpg";
 
 const stats = [
   { icon: Building2, value: "150+", label: "Projects Completed" },
-  { icon: Users, value: "250+", label: "Trusted Clients" },
+  { icon: Users, value: "100+", label: "Trusted Clients" },
   { icon: Award, value: "500+", label: "Employees" },
 ];
 
