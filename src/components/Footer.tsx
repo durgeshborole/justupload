@@ -34,8 +34,9 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/70 leading-relaxed">
-              Transforming blueprints into reality with innovation, engineering
-              excellence, and unmatched workmanship.
+              Delivering precision-engineered infrastructure solutions with uncompromising quality, safety, and reliability.
+              Professionally governed execution from concept to completion.
+              Building enduring value since 1999.
             </p>
           </div>
 
@@ -75,12 +76,13 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-1" />
                 <span className="text-primary-foreground/70">
-                  66, Shubh Vastu, Shirgaon, Badlapur - 421503
+                  001, Shree Krupa Aprt, Ghansoli Sector 21 , Navi Mumbai - 400701
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-secondary" />
                 <span className="text-primary-foreground/70">+91 9137222320</span>
+                <span className="text-primary-foreground/70">+91 8454032249</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-secondary" />

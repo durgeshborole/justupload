@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import heroBuilding from "@/assets/hero-building.jpg";
 
 const stats = [
-  { icon: Building2, value: "150+", label: "Projects Completed" },
+  { icon: Building2, value: "130+", label: "Projects Completed" },
   { icon: Users, value: "100+", label: "Trusted Clients" },
-  { icon: Award, value: "500+", label: "Employees" },
+  { icon: Award, value: "500+", label: "Workmanship and Workers" },
 ];
 
 export const Hero = () => {
@@ -25,6 +25,18 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative container mx-auto px-4 py-32">
         <div className="max-w-3xl">
+          {/* ✅ NEW LINE ADDED HERE */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-secondary uppercase tracking-widest text-sm md:text-base lg:text-lg font-semibold mb-3"
+
+          >
+            Welcome to Pawar Constructions
+          </motion.p>
+
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,15 +74,15 @@ export const Hero = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a href="#projects">
-            <Button variant="secondary" size="lg" className="gap-2 shadow-amber-glow">
-              View Our Projects
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+              <Button variant="secondary" size="lg" className="gap-2 shadow-amber-glow">
+                View Our Projects
+                <ArrowRight className="w-5 h-5" />
+              </Button>
             </a>
             <a href="#contact">
-            <Button variant="hero" size="lg">
-              Get a Quote
-            </Button>
+              <Button variant="hero" size="lg">
+                Get a Quote
+              </Button>
             </a>
           </motion.div>
         </div>
