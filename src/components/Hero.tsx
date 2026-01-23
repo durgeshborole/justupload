@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import heroBuilding from "@/assets/hero-building.jpg";
 
 const stats = [
-  { icon: Building2, value: "130+", label: "Projects Completed" },
-  { icon: Users, value: "100+", label: "Trusted Clients" },
-  { icon: Award, value: "500+", label: "Workmanship and Workers" },
+  { icon: Building2, value: "150+", label: "Projects Completed" },
+  { icon: Users, value: "130+", label: "Trusted Clients" },
+  { icon: Award, value: "500+", label: "Skilled Workforce" },
 ];
 
 export const Hero = () => {
@@ -30,7 +30,8 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-secondary uppercase tracking-widest text-sm md:text-base lg:text-lg font-semibold mb-3"
+            className="text-secondary uppercase tracking-[0.2em] text-base font-medium mb-3"
+
 
           >
             Welcome to Pawar Constructions

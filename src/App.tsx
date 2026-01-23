@@ -11,6 +11,10 @@ import { ProjectGallery } from "./components/ProjectGallery";
 import { Team } from "./components/Team";
 import { Clients } from "./components/Clients";
 import { Contact } from "./components/Contact";
+import { Priorities } from "./components/Priorities";
+import { OrganizationChart } from "./components/OrganizationChart";
+
+
 
 // ===== Admin Pages =====
 import { AdminLogin } from "./pages/admin/Login";
@@ -23,6 +27,8 @@ function HomePage() {
       <Header />
       <Hero />
       <About />
+      <Priorities />
+      <OrganizationChart />
       <Services />
       <ProjectGallery />
       <Team />
