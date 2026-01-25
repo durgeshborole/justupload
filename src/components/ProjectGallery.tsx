@@ -50,7 +50,7 @@ const projects = [
     type: "Data Centre",
     area: "9,146 Sqft",
     architect: "",
-    consultant: "Ms.Monika suryavanshi",
+    consultant: "Mrs.Monika suryavanshi",
     image: axiomgas,
     status: "Ongoing",
   },
