@@ -24,12 +24,12 @@ const administrativeStaff = [
 ];
 
 const leadership = [
-  { name: "Anil Shrimant Pawar", role: "Founder", initial: "ASP",image : anil },
-  { name: "Pratik Pawar", role: "Director", initial: "PP",image : pratik },
+  { name: "Mr.Anil Shrimant Pawar", role: "Founder", initial: "ASP",image : anil },
+  { name: "Mr.Pratik Pawar", role: "Director", initial: "PP",image : pratik },
 
-  { name: "Simab Borkar", role: "Chief Operating Officer", initial: "SB",image : simab },
-  { name: "Vishal Patil", role: "Senior Engineer", initial: "VP",image : vishal },
-   { name: "Sagar Pawar", role: "Senior Engineer", initial: "SP",image : sagar }
+  { name: "Mr.Simab Borkar", role: "Chief Operating Officer", initial: "SB",image : simab },
+  { name: "Mr.Vishal Patil", role: "Senior Engineer", initial: "VP",image : vishal },
+   { name: "Mr.Sagar Pawar", role: "Senior Engineer", initial: "SP",image : sagar }
 ];
 
 export const Team = () => {

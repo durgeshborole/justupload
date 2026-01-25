@@ -129,12 +129,12 @@ export const Header = () => {
             <img
               src={iso}
               alt="ISO 9001 Certified"
-              className="h-6 sm:h-7 object-contain"
+              className="h-20 sm:h-10 object-contain"
             />
             <img
               src={iaf}
               alt="IAF Accredited"
-              className="h-6 sm:h-7 object-contain"
+              className="h-20 sm:h-10 object-contain"
             />
           </div>
 
