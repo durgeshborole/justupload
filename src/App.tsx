@@ -13,6 +13,7 @@ import { Clients } from "./components/Clients";
 import { Contact } from "./components/Contact";
 import { Priorities } from "./components/Priorities";
 import { OrganizationChart } from "./components/OrganizationChart";
+import { WhyChoosePawar } from "./components/WhyChoosePawar";
 
 
 
@@ -33,6 +34,7 @@ function HomePage() {
       <ProjectGallery />
       <Team />
       <Clients />
+      <WhyChoosePawar />
       <Contact />
       <Footer />
     </>
