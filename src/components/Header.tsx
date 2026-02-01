@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import iso from "@/assets/certifications/ISO 9001.png";
 import iaf from "@/assets/certifications/IAF LOGO.png";
+import logo from "@/assets/logo/logo.jpeg";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -11,7 +12,7 @@ const navLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#team", label: "Team" },
   { href: "#contact", label: "Contact" },
-  
+
 ];
 
 export const Header = () => {
@@ -62,29 +63,39 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-gradient-amber rounded-lg flex items-center justify-center">
-            <span className="font-display text-xl font-bold text-secondary-foreground">
-              PC
-            </span>
-          </div>
-          <div className="hidden sm:block">
-            <h1
-              className={`font-display text-xl font-bold transition-colors ${isScrolled ? "text-foreground" : "text-primary-foreground"
-                }`}
-            >
-              Pawar Constructions
-            </h1>
-            <p
-              className={`text-xs transition-colors ${isScrolled
-                ? "text-muted-foreground"
-                : "text-primary-foreground/70"
-                }`}
-            >
-              Engineers & Contractors
-            </p>
-          </div>
-        </a>
+        <a href="/" className="flex items-center gap-3">
+  {/* LOGO IMAGE */}
+  <img
+    src={logo}
+    alt="Pawar Constructions Logo"
+    className="
+      h-12 w-12 
+      sm:h-14 sm:w-14 
+      object-contain
+    "
+  />
+
+  {/* TEXT (Hidden on small mobile like your screenshot) */}
+  <div className="hidden sm:block text-left">
+    <h1
+      className={`font-display text-lg sm:text-xl font-bold transition-colors ${
+        isScrolled ? "text-foreground" : "text-primary-foreground"
+      }`}
+    >
+      Pawar Constructions
+    </h1>
+    <p
+      className={`text-xs transition-colors ${
+        isScrolled
+          ? "text-muted-foreground"
+          : "text-primary-foreground/70"
+      }`}
+    >
+      Engineers & Contractors
+    </p>
+  </div>
+</a>
+
 
 
 
@@ -125,18 +136,19 @@ export const Header = () => {
           </Button>
 
           {/* Certification Logos (ALWAYS VISIBLE) */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 shrink-0">
             <img
               src={iso}
               alt="ISO 9001 Certified"
-              className="h-20 sm:h-10 object-contain"
+              className="h-12 w-12 object-contain md:h-10 md:w-auto"
             />
             <img
               src={iaf}
               alt="IAF Accredited"
-              className="h-20 sm:h-10 object-contain"
+              className="h-12 w-12 object-contain md:h-10 md:w-auto"
             />
           </div>
+
 
           {/* Mobile Menu Toggle */}
           <button
@@ -155,41 +167,41 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-  <div className="lg:hidden bg-card border-t border-border">
-    <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-      {navLinks.map((link) => (
-        <button
-          key={link.href}
-          type="button"
-          onClick={() => {
-            setIsMobileMenuOpen(false);
+        <div className="lg:hidden bg-card border-t border-border">
+          <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
 
-            setTimeout(() => {
-              const el = document.getElementById(
-                link.href.replace("#", "")
-              );
-              if (el) {
-                const y =
-                  el.getBoundingClientRect().top +
-                  window.pageYOffset -
-                  120;
-                window.scrollTo({ top: y, behavior: "smooth" });
-              }
-            }, 0);
-          }}
-          className="text-left font-medium text-foreground py-2"
-        >
-          {link.label}
-        </button>
-      ))}
+                  setTimeout(() => {
+                    const el = document.getElementById(
+                      link.href.replace("#", "")
+                    );
+                    if (el) {
+                      const y =
+                        el.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        120;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }, 0);
+                }}
+                className="text-left font-medium text-foreground py-2"
+              >
+                {link.label}
+              </button>
+            ))}
 
-      <Button variant="secondary" className="w-full gap-2 mt-2">
-        <Phone className="w-4 h-4" />
-        +91 9137222320
-      </Button>
-    </nav>
-  </div>
-)}
+            <Button variant="secondary" className="w-full gap-2 mt-2">
+              <Phone className="w-4 h-4" />
+              +91 9137222320
+            </Button>
+          </nav>
+        </div>
+      )}
 
     </header>
   );
