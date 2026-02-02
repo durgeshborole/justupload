@@ -122,7 +122,27 @@ export const Header = () => {
             <span className="xl:hidden">Call</span>
           </Button>
 
-          {/* Certification Logos (ALWAYS VISIBLE) */}
+          {/* Certification Logos */}
+<div className="flex items-center gap-2 shrink-0">
+  {/* ISO */}
+  <div className="w-12 h-12 sm:w-auto sm:h-10 flex items-center justify-center">
+    <img
+      src={iso}
+      alt="ISO 9001 Certified"
+      className="w-full h-full object-contain"
+    />
+  </div>
+
+  {/* IAF */}
+  <div className="w-12 h-12 sm:w-auto sm:h-10 flex items-center justify-center">
+    <img
+      src={iaf}
+      alt="IAF Accredited"
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
+{/* Certification Logos (ALWAYS VISIBLE)
           <div className="flex items-center gap-2">
             <img
               src={iso}
@@ -134,7 +154,7 @@ export const Header = () => {
               alt="IAF Accredited"
               className="h-20 sm:h-10 object-contain"
             />
-          </div>
+          </div> */}
 
           {/* Mobile Menu Toggle */}
           <button
