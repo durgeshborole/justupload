@@ -25,9 +25,7 @@ export const Footer = () => {
           {/* Brand Identity */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-amber rounded-lg flex items-center justify-center">
-                <span className="font-display text-xl font-bold text-secondary-foreground">PC</span>
-              </div>
+              
               <div>
                 <h3 className="font-display text-xl font-bold">Pawar Constructions</h3>
                 <p className="text-primary-foreground/60 text-sm">Engineers & Contractors</p>
